@@ -3,7 +3,7 @@ let txtFld = document.getElementById("text-input");
 let timeStamp = document.createElement("div");
 timeStamp.classList.add("time");
 
-
+// intro message
 function addMessage() {
     let newDiv = document.createElement("div");
     newDiv.classList.add("message-bubble", "message-robot");
@@ -17,7 +17,7 @@ function addMessage() {
 }
 setTimeout(addMessage, 1200);
 
-// send message and clear input
+// send user message and clear input
 function sendMessage() {
     if (txtFld.value != "") {
         let newMessage = document.createElement("div");
@@ -32,6 +32,7 @@ function sendMessage() {
     }
 }
 
+// add time stamp
 function getTime() {
     let today = new Date();
     let time = today.getHours() + ":" + today.getMinutes();
