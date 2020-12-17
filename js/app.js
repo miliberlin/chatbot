@@ -1,3 +1,6 @@
+// To do:
+// - auto-scroll down when a new message is added
+
 let body = document.getElementById('message-output');
 let txtFld = document.getElementById("text-input");
 
@@ -18,8 +21,43 @@ function getTime() {
     timeStamp.classList.add("time");
 
     let today = new Date();
-    let time = today.getHours() + ":" + today.getMinutes();
+    let min = today.getMinutes();
+    min = min < 10 ? "0" + min : min;
+
+    let time = today.getHours() + ":" + min;
     timeStamp.innerHTML = time;
+    return timeStamp;
+}
+
+// intro message
+function introMessage() {
+    let introMessage = document.createElement("div");
+    introMessage.classList.add("message-bubble", "message-robot");
+    // message
+    introMessage.innerHTML = "Hello, how are you?";
+
+    let time = getTime();
+    introMessage.appendChild(time);
+
+    body.appendChild(introMessage);
+}
+setTimeout(introMessage, 1200);
+
+// send user message and clear input
+function sendMessage() {
+    if (txtFld.value != "") {
+        let newMessage = document.createElement("div");
+        newMessage.classList.add("message-bubble", "message-client");
+        newMessage.innerHTML = txtFld.value;
+
+        let time = getTime();
+        newMessage.appendChild(time);
+
+        body.appendChild(newMessage);
+        txtFld.value = "";
+
+        setTimeout(createAnswer, 1200);
+    }
 }
 
 // create random answer
@@ -33,39 +71,8 @@ function createAnswer() {
     newAnswer.classList.add("message-bubble", "message-robot");
     newAnswer.innerHTML = answerContent;
 
-    // getTime();
-    // newMessage.appendChild(timeStamp);
+    let time = getTime();
+    newAnswer.appendChild(time);
 
     body.appendChild(newAnswer);
-}
-
-// intro message
-function introMessage() {
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("message-bubble", "message-robot");
-    // message
-    newDiv.innerHTML = "Hello, how are you?";
-
-    // getTime();
-    // newDiv.appendChild(timeStamp);
-
-    body.appendChild(newDiv);
-}
-setTimeout(introMessage, 1200);
-
-// send user message and clear input
-function sendMessage() {
-    if (txtFld.value != "") {
-        let newMessage = document.createElement("div");
-        newMessage.classList.add("message-bubble", "message-client");
-        newMessage.innerHTML = txtFld.value;
-
-        // getTime();
-        // newMessage.appendChild(timeStamp);
-
-        body.appendChild(newMessage);
-        txtFld.value = "";
-
-        setTimeout(createAnswer, 1200);
-    }
 }
