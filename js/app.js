@@ -3,7 +3,8 @@
 
 let body = document.getElementById("message-output");
 let txtFld = document.getElementById("text-input");
-let sound = new Audio("../incoming-message.mp3");
+let sound = new Audio("incoming-message.mp3");
+sound.muted = true;
 let notification = document.getElementById("message-sound");
 let bellIcon = notification.querySelector("i");
 
@@ -49,9 +50,6 @@ function introMessage() {
 setTimeout(introMessage, 1200);
 
 // send user message and clear input
-function sendMessage() {
-}
-
 txtFld.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
         e.preventDefault();
@@ -99,11 +97,11 @@ function scrollToBottom() {
 // (un-)mute notification sound and change bell icon
 notification.addEventListener("click", function() {
     if (bellIcon.classList.contains("fa-bell-slash")) {
-        bellIcon.classList = "fas fa-bell"
-        sound = new Audio("../incoming-message.mp3");
+        bellIcon.classList = "fas fa-bell";
+        sound.muted = false;
     } else {
-        bellIcon.classList = "fas fa-bell-slash"
-        sound = new Audio("");
+        bellIcon.classList = "fas fa-bell-slash";
+        sound.muted = true;
     }
 });
 

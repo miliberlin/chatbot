@@ -37,6 +37,9 @@ body {
 .inner-wrap #header .profile-img {
   width: 15%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .inner-wrap #header .profile-img img {
   height: 100%;
@@ -124,6 +127,36 @@ body {
 }
 .inner-wrap .message-input textarea:focus {
   outline: 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+
+  .outer-wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+  }
+
+  .inner-wrap #header {
+    height: 10%;
+  }
+  .inner-wrap #header .profile-img img {
+    height: 90%;
+  }
+  .inner-wrap #header .chat-ttl h1 {
+    font-size: 1.6rem;
+  }
+  .inner-wrap #message-output {
+    height: 70%;
+  }
+  .inner-wrap .message-input {
+    height: 20%;
+    padding: 20px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

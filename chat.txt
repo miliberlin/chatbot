@@ -1,0 +1,8 @@
+1.)
+Get image
+https://source.unsplash.com/1600x900/?beach
+
+2.) Ask for name greet
+
+3.) What is your favourite animal?
+--> send image
