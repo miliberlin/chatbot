@@ -59,14 +59,14 @@ txtFld.addEventListener("keydown", function (e) {
             let newMessage = document.createElement("div");
             newMessage.classList.add("message-bubble", "message-client");
             newMessage.innerHTML = txtFld.value;
-    
+
             let time = getTime();
             newMessage.appendChild(time);
-    
+
             body.appendChild(newMessage);
             scrollToBottom();
             txtFld.value = "";
-    
+
             setTimeout(createAnswer, 1200);
         }
     }

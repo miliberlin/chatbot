@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="outer-wrap">
         <div class="inner-wrap">
+            <div id="header">
+                <div class="profile-img">
+                    <img src="img/profile.jpg" alt="">
+                </div>
+                <div class="chat-ttl">
+                    <h1>Chat with Doggo</h1>
+                </div>
+                <div id="message-sound">
+                    <i class="fas fa-bell"></i>
+                </div>
+            </div>
             <div id="message-output">
             </div>
             <div class="message-input">
                 <textarea id="text-input" name="text" placeholder="Type your message and hit ENTER to send."></textarea>
-                <div class="text-bottom">
-                    <div id="message-sound">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
