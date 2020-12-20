@@ -50,21 +50,27 @@ setTimeout(introMessage, 1200);
 
 // send user message and clear input
 function sendMessage() {
-    if (txtFld.value != "") {
-        let newMessage = document.createElement("div");
-        newMessage.classList.add("message-bubble", "message-client");
-        newMessage.innerHTML = txtFld.value;
-
-        let time = getTime();
-        newMessage.appendChild(time);
-
-        body.appendChild(newMessage);
-        scrollToBottom();
-        txtFld.value = "";
-
-        setTimeout(createAnswer, 1200);
-    }
 }
+
+txtFld.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        if (txtFld.value != "") {
+            let newMessage = document.createElement("div");
+            newMessage.classList.add("message-bubble", "message-client");
+            newMessage.innerHTML = txtFld.value;
+    
+            let time = getTime();
+            newMessage.appendChild(time);
+    
+            body.appendChild(newMessage);
+            scrollToBottom();
+            txtFld.value = "";
+    
+            setTimeout(createAnswer, 1200);
+        }
+    }
+});
 
 // create random answer
 function createAnswer() {
