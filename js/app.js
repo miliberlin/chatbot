@@ -1,8 +1,11 @@
 // To do:
 // - auto-scroll down when a new message is added
+// - add message sound & mute function
+// - more intelligent chat
 
-let body = document.getElementById('message-output');
+let body = document.getElementById("message-output");
 let txtFld = document.getElementById("text-input");
+let sound = new Audio("../incoming-message.mp3");
 
 let answers = [
     "What is your favourite colour?",
@@ -40,6 +43,8 @@ function introMessage() {
     introMessage.appendChild(time);
 
     body.appendChild(introMessage);
+    sound.play();
+    scrollToBottom();
 }
 setTimeout(introMessage, 1200);
 
@@ -54,6 +59,7 @@ function sendMessage() {
         newMessage.appendChild(time);
 
         body.appendChild(newMessage);
+        scrollToBottom();
         txtFld.value = "";
 
         setTimeout(createAnswer, 1200);
@@ -75,4 +81,25 @@ function createAnswer() {
     newAnswer.appendChild(time);
 
     body.appendChild(newAnswer);
+    sound.play();
+    scrollToBottom();
 }
+
+// scroll down when message is send/received
+function scrollToBottom() {
+    $("#message-output").animate({ scrollTop: $("#message-output")[0].scrollHeight}, 500);
+}
+
+// test function for scrolling
+// setInterval(function() {
+//     let newMessage = document.createElement("div");
+//     newMessage.classList.add("message-bubble", "message-client");
+//     newMessage.innerHTML = "test";
+
+//     let time = getTime();
+//     newMessage.appendChild(time);
+
+//     body.appendChild(newMessage);
+//     scrollToBottom();
+// },
+// 2000)
