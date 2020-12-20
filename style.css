@@ -92,9 +92,25 @@ body {
 .inner-wrap .message-input textarea:focus {
   outline: 0;
 }
-.inner-wrap .message-input button {
+.inner-wrap .message-input .text-bottom {
   height: 30%;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.inner-wrap .message-input .text-bottom #message-sound {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-right: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-wrap .message-input .text-bottom #message-sound i {
+  width: 30px;
+}
+.inner-wrap .message-input .text-bottom button {
   border-radius: 3px;
   padding-left: 20px;
   margin-top: 5px;
@@ -104,18 +120,18 @@ body {
   transition: all ease-in;
   background-color: #d4d4d4;
 }
-.inner-wrap .message-input button:focus {
+.inner-wrap .message-input .text-bottom button:focus {
   outline: 0;
 }
-.inner-wrap .message-input button i {
+.inner-wrap .message-input .text-bottom button i {
   opacity: 0;
   width: 20px;
   height: auto;
 }
-.inner-wrap .message-input button:hover {
+.inner-wrap .message-input .text-bottom button:hover {
   transform: scale(0.9);
 }
-.inner-wrap .message-input button:hover i {
+.inner-wrap .message-input .text-bottom button:hover i {
   opacity: 1;
 }
 .inner-wrap .message-input p {

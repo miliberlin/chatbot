@@ -1,11 +1,11 @@
 // To do:
-// - auto-scroll down when a new message is added
-// - add message sound & mute function
 // - more intelligent chat
 
 let body = document.getElementById("message-output");
 let txtFld = document.getElementById("text-input");
 let sound = new Audio("../incoming-message.mp3");
+let notification = document.getElementById("message-sound");
+let bellIcon = notification.querySelector("i");
 
 let answers = [
     "What is your favourite colour?",
@@ -89,6 +89,17 @@ function createAnswer() {
 function scrollToBottom() {
     $("#message-output").animate({ scrollTop: $("#message-output")[0].scrollHeight}, 500);
 }
+
+// (un-)mute notification sound and change bell icon
+notification.addEventListener("click", function() {
+    if (bellIcon.classList.contains("fa-bell-slash")) {
+        bellIcon.classList = "fas fa-bell"
+        sound = new Audio("../incoming-message.mp3");
+    } else {
+        bellIcon.classList = "fas fa-bell-slash"
+        sound = new Audio("");
+    }
+});
 
 // test function for scrolling
 // setInterval(function() {

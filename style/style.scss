@@ -88,29 +88,45 @@ body {
         outline: 0;
       }
     }
-    button {
+    .text-bottom {
       height: 30%;
-      float: right;
-      border-radius: 3px;
-      padding-left: 20px;
-      margin-top: 5px;
-      text-transform: uppercase;
-      width: 100px;
-      height: 30px;
-      transition: all ease-in;
-      background-color: #d4d4d4;
-      &:focus {
-        outline: 0;
-      }
-      i {
-        opacity: 0;
-        width: 20px;
-        height: auto;
-      }
-      &:hover {
-        transform: scale(0.9);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      #message-sound {
+        color: #fff;
+        font-size: 1.4rem;
+        margin-right: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         i {
-          opacity: 1;
+          width: 30px;
+        }
+      }
+      button {
+        border-radius: 3px;
+        padding-left: 20px;
+        margin-top: 5px;
+        text-transform: uppercase;
+        width: 100px;
+        height: 30px;
+        transition: all ease-in;
+        background-color: #d4d4d4;
+        &:focus {
+          outline: 0;
+        }
+        i {
+          opacity: 0;
+          width: 20px;
+          height: auto;
+        }
+        &:hover {
+          transform: scale(0.9);
+          i {
+            opacity: 1;
+          }
         }
       }
     }
