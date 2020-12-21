@@ -79,6 +79,12 @@ body {
         width: 100%;
         text-align: right;
       }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
     }
     .message-robot {
       background-color: #b37f9a;
@@ -107,6 +113,13 @@ body {
         border-right: 20px solid transparent;
       }
     }
+    .exit {
+      text-align: right;
+      color: #444444;
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 20px;
+    }
   }
   .message-input {
     background-color: rgb(44, 44, 44);
@@ -122,6 +135,10 @@ body {
       resize: none;
       &:focus {
         outline: 0;
+      }
+      &:disabled {
+        background: #3a3a3a;
+        font-style: italic;
       }
     }
   }
