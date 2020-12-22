@@ -151,23 +151,7 @@ $(function() {
             body.appendChild(exitChat);
             sound.play();
             scrollToBottom();
-        }
-        // else if (questionIndex === 0) {
-        //     // welcome message
-        //     let questionContent = questions[0].question;
-
-        //     let newQuestion = document.createElement("div");
-        //     newQuestion.classList.add("message-bubble", "message-robot");
-        //     newQuestion.innerHTML = questionContent;
-
-        //     let time = getTime();
-        //     newQuestion.appendChild(time);
-
-        //     body.appendChild(newQuestion);
-        //     sound.play();
-        //     scrollToBottom();
-        // }
-        else {
+        } else {
             let questionContent;
             if (questionIndex === 0) {
                 // welcome message
